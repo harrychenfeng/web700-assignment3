@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Products</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <main class="container">
+        <h1>Product Catalogue</h1>
+
+        <a href="/products/new">Add Product</a>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Category</th>
+                    <th>Brand</th>
+                    <th>Price</th>
+                    <th>Stock</th>
+                    <th>Availability</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <% products.forEach((product) => { %>
+                    <tr>
+                        <td><%= product.name %></td>
+                        <td><%= product.category %></td>
+                        <td><%= product.brand || "N/A" %></td>
+                        <td>$<%= Number(product.price).toFixed(2) %></td>
+                        <td><%= product.stockQuantity %></td>
+                        <td>
+                            <% if (product.available) { %>
+                                Available
+                            <% } else { %>
+                                Not Available
+                            <% } %>
+                        </td>
+                        <td>
+                            <a href="/products/<%= product.id %>">
+                                Details
+                            </a>
+
+                            <a href="/products/<%= product.id %>/edit">
+                                Edit
+                            </a>
+                        </td>
+                    </tr>
+                <% }) %>
+            </tbody>
+        </table>
+    </main>
+</body>
+</html>
