@@ -16,7 +16,6 @@
     "express": "^5.2.1",
     "pg": "^8.22.0",
     "pg-hstore": "^2.3.4",
-    "save": "^2.9.0",
     "sequelize": "^6.37.8"
   },
   "devDependencies": {
