@@ -1,3 +1,4 @@
+require("pg");
 const { Sequelize } = require("sequelize");
  
 const connectionString = process.env.DATABASE_URL;
